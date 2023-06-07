@@ -1,0 +1,71 @@
+@import "./Colors.scss";
+
+* {
+    font-family: 'Roboto', sans-serif;
+    background-color: $blue;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    overflow-x:hidden;
+
+  }
+
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+      color:aqua;
+    }
+  }
+
+  .app{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+.board{
+    .board-row{
+        display: flex;
+        flex-direction: row;
+        width:200px;
+        border-bottom: 2px solid #fff;
+        &:last-child{
+            border-bottom: none;
+        }
+        .square{
+            width: 80px;
+            height: 80px;
+            border-right: 2px solid #fff;
+            font-size: 2.5rem;
+            overflow: hidden;
+            transition: all 0.2s;
+
+            &:last-child{
+                border-right:none;
+            }
+
+            &.wining{
+                animation: scaleText 1.4s infinite;
+                @keyframes scaleText  {
+                    0%{
+                        transform: 2.5rem;
+                    }
+                    50%{
+                        font-size: 3.5rem;
+                    }
+                    100%{
+                        font-size: 2.5rem;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+}
