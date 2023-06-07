@@ -8,6 +8,7 @@
     margin: 0;
     overflow-x:hidden;
 
+
   }
 
   button {
@@ -17,10 +18,13 @@
     &:hover {
       cursor: pointer;
       color:aqua;
+      
+    
     }
   }
 
   .app{
+    margin-block-start: 5%;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -33,22 +37,22 @@
     .board-row{
         display: flex;
         flex-direction: row;
-        width:200px;
-        border-bottom: 2px solid #fff;
+        border-block-end: 2px solid #fff;
         &:last-child{
-            border-bottom: none;
+            border-block-end: none;
         }
         .square{
-            width: 80px;
-            height: 80px;
-            border-right: 2px solid #fff;
+            inline-size: 80px;
+            block-size: 80px;
+            border-inline-end: 2px solid #fff;
             font-size: 2.5rem;
             overflow: hidden;
             transition: all 0.2s;
 
             &:last-child{
-                border-right:none;
+                border-inline-end:none;
             }
+            
 
             &.wining{
                 animation: scaleText 1.4s infinite;
