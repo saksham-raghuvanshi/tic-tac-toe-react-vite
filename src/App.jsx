@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+// import { useState } from "react"
 import Boards from "./Components/Boards"
 
 
@@ -19,24 +19,24 @@ function App() {
   //   console.log('hello');
   //   counter=counter+1;
   // };
-const [counter, setCounter]=useState(1);
-console.log('hello');
-const onBtnClick =()=>{
-   setCounter(currentCounter =>{
-    return currentCounter+1;
-   });
-  };
+// const [counter, setCounter]=useState(1);
+// console.log('hello');
+// const onBtnClick =()=>{
+//    setCounter(currentCounter =>{
+//     return currentCounter+1;
+//    });
+//   };
 
   return (
     <div className="app">
-      <div>
+      {/* <div>
         <button onClick={
           onBtnClick
         }>Click me please</button>
-        <div>{counter}</div>
-      </div>
+        <>{counter}</ div>
+      </div> */}
       
-        
+        <Boards/>
     </div>
   )
 }
