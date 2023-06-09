@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import Boards from "./Components/Boards"
+import { calculateWinner } from "../Winner";
 
 
 import "./Styles/styles.scss"
@@ -37,12 +38,17 @@ function App() {
   const [isNext, setIsNext]=useState(false);
 
   console.log(squares);
-
+  
+  const winner = calculateWinner(squares);
   const NextPlayer = isNext ? 'X' : '0';
+  const winnerplayer = winner ? 'Winner is ${winner}': 'Next Player is ${NextPlayer}';
+  
+  console.log(winnerplayer);
+  
   
   const handleSquareClick = clickedposition => {
   //null , 'X' , '0' if squares value truthy then it return same 
-    if(squares[clickedposition]){
+    if(squares[clickedposition] || winner){
       return;
     }
 
