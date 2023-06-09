@@ -1,5 +1,7 @@
 # Tic Tac Toe Game Project
 
+Deploy Link - https://tic-tac-toe-s.surge.sh/
+
 This is a Tic Tac Toe game project built using ReactJS, Vite, HTML, CSS, and JavaScript. The project aims to provide a simple implementation of the classic Tic Tac Toe game where two players take turns marking spaces on a 3x3 grid.
 
 <h2>Features</h2>
