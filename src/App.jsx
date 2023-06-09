@@ -1,5 +1,5 @@
 
-// import { useState } from "react"
+import { useState } from "react"
 import Boards from "./Components/Boards"
 
 
@@ -7,6 +7,9 @@ import "./Styles/styles.scss"
 
 function App() {
 
+
+
+  
 
   //in react we can't use like javascript we need to defined state
  //concept called re-renders : when the component repainted on the webpage
@@ -27,6 +30,41 @@ function App() {
 //    });
 //   };
 
+// create array with NULL value 
+  const [squares, setSquares]= useState(Array(9).fill(null));
+ 
+//introducing player here
+  const [isNext, setIsNext]=useState(false);
+
+  console.log(squares);
+
+  const NextPlayer = isNext ? 'X' : '0';
+  
+  const handleSquareClick = clickedposition => {
+  //null , 'X' , '0' if squares value truthy then it return same 
+    if(squares[clickedposition]){
+      return;
+    }
+
+    setSquares(currentSquares =>{
+      return currentSquares.map((squareValue, position)=>{
+        if(clickedposition === position){
+          return isNext? 'X' : '0';
+        }
+
+        return squareValue;
+
+      });
+    });
+
+
+    setIsNext((currentisNext) => !currentisNext);
+
+
+
+  };
+
+
   return (
     <div className="app">
       {/* <div>
@@ -35,8 +73,11 @@ function App() {
         }>Click me please</button>
         <>{counter}</ div>
       </div> */}
+
+      <h2>Next player is {NextPlayer}</h2>
+
       
-        <Boards/>
+        <Boards squares={squares} handleSquareClick={handleSquareClick}/>
     </div>
   )
 }

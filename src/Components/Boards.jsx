@@ -1,39 +1,9 @@
-import { useState } from 'react'
+
 import Square from './Square'
 
 
-const Boards = () => {
-// create array with NULL value 
-  const [squares, setSquares]= useState(Array(9).fill(null));
- 
-//introducing player here
-  const [isNext, setIsNext]=useState(false);
+const Boards = ({squares, handleSquareClick}) => {
 
-  console.log(squares);
-  
-  const handleSquareClick = clickedposition => {
-  //null , 'X' , '0' if squares value truthy then it return same 
-    if(squares[clickedposition]){
-      return;
-    }
-
-    setSquares(currentSquares =>{
-      return currentSquares.map((squareValue, position)=>{
-        if(clickedposition === position){
-          return isNext? 'X' : '0';
-        }
-
-        return squareValue;
-
-      });
-    });
-
-
-    setIsNext((currentisNext) => !currentisNext);
-
-
-
-  };
 
   const renderSquare = position => {
     return (
