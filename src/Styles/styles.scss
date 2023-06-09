@@ -73,3 +73,20 @@
         
     }
 }
+
+.status-message {
+	margin-block-end: 30px;
+	font-size: 1.5rem;
+	font-weight: lighter;
+	span {
+	  font-weight: normal;
+	}
+}
+
+.text-green {
+    color: $green;
+  }
+  
+  .text-orange {
+    color: $orange;
+  }

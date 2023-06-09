@@ -5,6 +5,7 @@ import { calculateWinner } from "../Winner";
 
 
 import "./Styles/styles.scss"
+import Status from "./Components/Status";
 
 function App() {
 
@@ -40,14 +41,11 @@ function App() {
   console.log(squares);
   
   const winner = calculateWinner(squares);
-  const NextPlayer = isNext ? 'X' : '0';
-  const winnerplayer = winner ? 'Winner is ${winner}': 'Next Player is ${NextPlayer}';
   
-  console.log(winnerplayer);
   
   
   const handleSquareClick = clickedposition => {
-  //null , 'X' , '0' if squares value truthy then it return same 
+  //null , 'X' , '0' if squares value truthy then it return same and winner
     if(squares[clickedposition] || winner){
       return;
     }
@@ -80,10 +78,11 @@ function App() {
         <>{counter}</ div>
       </div> */}
 
-      <h2>Next player is {NextPlayer}</h2>
-
-      
-        <Boards squares={squares} handleSquareClick={handleSquareClick}/>
+    
+<Status winner={winner} isNext={isNext} squares={squares}/>
+            <Boards squares={squares} handleSquareClick={handleSquareClick}/>
+        
+        
     </div>
   )
 }
