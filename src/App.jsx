@@ -8,6 +8,8 @@ import "./Styles/styles.scss"
 import Status from "./Components/Status";
 import History from "./Components/History";
 
+
+const NEW_GAME =[{squares: Array(9).fill(null), isNext: false}];
 function App() {
 
 
@@ -33,7 +35,7 @@ function App() {
 //   };
 
 // History
-const [history, setHistory] = useState([{squares: Array(9).fill(null), isNext: false}]);
+const [history, setHistory] = useState(NEW_GAME);
 const [currentmove, setcurrentmove]= useState(0);
 
 const gamingBoard=history[currentmove];
